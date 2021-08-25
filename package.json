@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --collectCoverage true",
     "lint": "eslint --max-warnings 0 --no-error-on-unmatched-pattern \"./*.{js,ts}\" \"src/**/*.{js,ts}\" \"test/**/*.{js,ts}\""
   },
   "repository": {
@@ -19,10 +22,15 @@
   },
   "homepage": "https://github.com/peabnuts123/jamies-playground#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/jest": "^27.0.1",
     "@types/node": "^16.7.1",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "@typescript-eslint/parser": "^4.29.3",
+    "babel-jest": "^27.0.6",
     "eslint": "^7.32.0",
+    "jest": "^27.0.6",
     "ts-node": "^10.2.1",
     "typescript": "^4.3.5"
   }
