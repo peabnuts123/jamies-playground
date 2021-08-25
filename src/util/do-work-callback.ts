@@ -1,7 +1,11 @@
-export function doWorkCallback(callback: (err: string | undefined) => void): void {
-  console.log("Starting working...");
+export function doWorkCallback(simulateError: boolean, callback: (result?: number, err?: string) => void): void {
+  console.log("Starting work (callback)...");
   setTimeout(() => {
-    console.log("Finished working.");
-    callback(undefined);
+    if (simulateError) {
+      callback(undefined, "An error occurred while processing");
+    } else {
+      console.log("Finished working.");
+      callback(42, undefined);
+    }
   }, 2000);
 }
